@@ -1,15 +1,44 @@
-<div [ngClass]="{'is-user': user, 'is-anon': anon}">
-  <div *ngIf="loading">
-    <span class="username text">loading...</span>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="navbar mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a class="logo" [routerLink]="['/films']"><span class="first-letter">F</span>LIBRARY</a>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav [ngClass]="{'is-user': user, 'is-anon': anon}" class="mdl-navigation mdl-layout--large-screen-only">
+        <a *ngIf="!loading && !!user" class="mdl-navigation__link" [routerLink]="['/films']">{{user.username}}</a>
+        <a *ngIf="!loading && !!user" class="mdl-navigation__link" (click)="logout()">Logout</a>
+        <a *ngIf="!loading && !user" class="mdl-navigation__link" [routerLink]="['/login']">Login</a>
+        <a *ngIf="!loading && !user" class="mdl-navigation__link" [routerLink]="['/signup']">Signup</a>
+      </nav>
+    </div>
+  </header>
+  <div id="navbar-drawer" class="navbar-drawer mdl-layout__drawer">
+    <a (click)="handleVisible()" class="logo" [routerLink]="['/films']"><span class="first-letter">F</span>LIBRARY</a>
+    <nav class="mdl-navigation">
+      <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+        <div *ngIf="!loading && !!user">
+          <a (click)="handleVisible()" class="mdl-navigation__link" [routerLink]="['/films']">{{user.username}}</a>
+          <a (click)="handleVisible()" class="mdl-navigation__link" (click)="logout()">Logout</a>
+        </div>
+        <div *ngIf="!loading && !user">
+            <a (click)="handleVisible()" class="mdl-navigation__link" [routerLink]="['/login']">Login</a>
+            <a (click)="handleVisible()" class="mdl-navigation__link" [routerLink]="['/signup']">Signup</a>
+          </div>
+      </div>
+    </nav>
   </div>
-  <div *ngIf="!loading && !!user">
-    <a [routerLink]="['/profile']">{{user.username}}</a>
-    <a (click)="logout()">logout</a>
-  </div>
-  <div *ngIf="!loading && anon">
-    <a [routerLink]="['/login']">login</a>
-    <a [routerLink]="['/signup']">signup</a>
-  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer>
+    <div class="first-footer">
+      Get connected with us on social networks!
+    </div>
+    <div class="second-footer">
+      @2018 Copyright:   Flibrary.com
+    </div>
+  </footer>
 </div>
-
-<router-outlet></router-outlet>

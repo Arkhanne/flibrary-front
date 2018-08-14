@@ -6,7 +6,7 @@ import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   title = 'app';
@@ -30,5 +30,10 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout()
       .then(() => this.router.navigate(['/login']));
+  }
+
+  handleVisible() {
+    document.getElementById('navbar-drawer').classList.remove('is-visible');
+    document.getElementsByClassName('mdl-layout__obfuscator')[0].classList.remove('is-visible');
   }
 }

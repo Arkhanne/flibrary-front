@@ -35,13 +35,13 @@ const routes: Routes = [
     FilmsPageComponent,
     FilmDetailPageComponent,
     SearchPageComponent,
-    ReviewPageComponent
+    ReviewPageComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     AuthService,
@@ -51,4 +51,5 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

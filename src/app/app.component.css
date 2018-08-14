@@ -1,0 +1,45 @@
+.mdl-layout {
+  background-color: #333333;
+}
+
+.navbar {
+  background-color: #000000;
+} 
+
+.navbar .logo {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-drawer {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.navbar-drawer .logo {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.first-letter {
+  color: #ff0000;
+}
+
+.first-footer {
+  background-color: #000000;
+  color: #e6e6e6;
+  font-size: 0.6em;
+  padding: 10px;
+}
+
+.second-footer {
+  color: #e6e6e6;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5em;
+}

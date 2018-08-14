@@ -10,7 +10,7 @@
 
   **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.
 
-  **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault.
+  **500:** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault.
   
   **Signup:** As an anon I can sign up in the platform so that I can start saving favourite films.
   
@@ -20,9 +20,9 @@
 
   **Search films:** As a user I can search films so that a can choose one to add to favourites.
 
-  **Add to favourites** As a user I want to add a film to favourite so that I can save the films that I like.
+  **Add to favourites:** As a user I want to add a film to favourite so that I can save the films that I like.
 
-  **List films** As a user I want to see my favourite films so that I can choose one to see detailed information.
+  **List films:** As a user I want to see my favourite films so that I can choose one to see detailed information.
 
   **Film Detail:** As a user I want to see the details of a film so that I can rate and comment it.
 

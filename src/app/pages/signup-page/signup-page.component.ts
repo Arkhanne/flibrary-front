@@ -26,7 +26,7 @@ export class SignupPageComponent implements OnInit {
         password: this.password
     })
     .then(() => {
-        this.router.navigate(['/private']);
+        this.router.navigate(['/films']);
     })
     .catch(error => {
         console.log(error);
