@@ -13,6 +13,7 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
 import { FilmsPageComponent } from './pages/films-page/films-page.component';
 import { FilmDetailPageComponent } from './pages/film-detail-page/film-detail-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'films',  component: FilmsPageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'films/:id',  component: FilmDetailPageComponent , canActivate: [ RequireUserGuard ] },
+  { path: 'search',  component: SearchPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' }
   ];
 
@@ -29,7 +31,8 @@ const routes: Routes = [
     LoginPageComponent,
     SignupPageComponent,
     FilmsPageComponent,
-    FilmDetailPageComponent
+    FilmDetailPageComponent,
+    SearchPageComponent
   ],
   imports: [
     BrowserModule,
