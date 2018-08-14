@@ -1,6 +1,6 @@
 # FLIBRARY
 
-- Flibrary is a web page where you can save a list of your favorite films and share comments and ratings with other users.
+- Flibrary is a web page where you can save a list of your favourite films and share comments and ratings with other users.
 
 - Front end: https://github.com/Arkhanne/flibrary-front
 
@@ -12,21 +12,21 @@
 
   **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault.
   
-  **Signup:** As an anon I can sign up in the platform so that I can start saving favorite films.
+  **Signup:** As an anon I can sign up in the platform so that I can start saving favourite films.
   
-  **Login:** As a user I can login to the platform so that I can see my favorite films.
+  **Login:** As a user I can login to the platform so that I can see my favourite films.
   
   **Logout:** As a user I can logout from the platform so no one else can use it.
 
-  **Search films:** As a user I can search films so that a can choose one to add to favorites.
+  **Search films:** As a user I can search films so that a can choose one to add to favourites.
 
-  **Add to favorites** As a user I want to add a film to favorite so that I can save the films that I like.
+  **Add to favourites** As a user I want to add a film to favourite so that I can save the films that I like.
 
-  **List films** As a user I want to see my favorite films so that I can choose one to see detailed information.
+  **List films** As a user I want to see my favourite films so that I can choose one to see detailed information.
 
   **Film Detail:** As a user I want to see the details of a film so that I can rate and comment it.
 
-  **Rate film:** As a user I want to rate a film in my favorite list and to change my previous rate.
+  **Rate film:** As a user I want to rate a film in my favourite list and to change my previous rate.
 
   **Review film:** As a user I want to add comments to a film in my favourite list.
 
@@ -66,7 +66,7 @@
   - films.getAll()
   - films.getOne(id)
   - films.search(title, [year])
-  - films.favorite(id)
+  - films.favourite(id)
   - films.rate(id, rate)
   - films.review(id, review)
 
@@ -140,7 +140,7 @@
   - POST /auth/signup
   - POST /auth/login
   - POST /auth/me
-  - POST /favorite
+  - POST /favourite
   - GET /films
   - GET /films/:id
   - GET /search
