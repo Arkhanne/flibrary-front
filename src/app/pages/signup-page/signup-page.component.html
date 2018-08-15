@@ -1,16 +1,41 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
+<h1>
+    <span class="first-letter">F</span>LIBRARY
+</h1>
 
+<form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
-    <label>username</label>
-    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required />
-
-    <label>password</label>
-    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required />
-
+    <label>Username</label>
+    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" minlength="3" [disabled]="processing" required />
   </div>
 
-  <div class="field submit">
-    <button type="submit">Signup</button>
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+    <label>Password</label>
+    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" minlength="3" [disabled]="processing" required />
+  </div>
+
+  <div class="submit-button-container">
+    <button class="submit-button" type="submit"><span class="first-letter">S</span>ignup</button>
   </div>
 </form>
 
+<div *ngIf="feedbackEnabled && usernameField.errors">
+  <p *ngIf="usernameField.errors.required" class="validation">Username required</p>
+  <p *ngIf="usernameField.errors.minlength" class="validation">Username is too short</p>
+</div>
+
+<div *ngIf="feedbackEnabled && passwordField.errors">
+    <p *ngIf="passwordField.errors.required" class="validation">Password required</p>
+    <p *ngIf="passwordField.errors.minlength" class="validation">Password is too short</p>
+  </div>
+
+
+
+<!-- <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" >
+  <label>Username</label>
+  <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required />
+  <label>Password</label>
+  <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required />
+  <div class="submit-button-container">
+    <button class="submit-button" type="submit"><span class="first-letter">S</span>ignup</button>
+  </div>
+</form> -->

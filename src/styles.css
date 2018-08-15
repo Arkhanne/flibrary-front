@@ -26,7 +26,11 @@ body {
   line-height: 147%;
 }
 
-h1 {}
+h1 {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 60px;
+}
 
 h2 {}
 
@@ -81,6 +85,36 @@ p {
   color: #ff0000;
 }
 
+.form {
+  background-color: #000000;
+  margin: 50px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
 
+.form label {
+  margin: 15px 5px 0 10px;
+}
 
+.form input {
+  margin: 0 10px;
+  font-size: 1.5em;
+}
 
+.submit-button-container {
+  text-align: right;
+  margin: 30px 10px 15px 0;
+ }
+
+ .submit-button {
+   background-color: #ffffff;
+  color: #000000;
+  font-size: 1em;
+  padding: 5px;
+ }
+
+ .field {
+   display: flex;
+   flex-direction: column;
+ }
