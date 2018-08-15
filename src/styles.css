@@ -125,3 +125,13 @@ p {
    color: #ff0000;
    text-align: center;
  }
+
+ .error-page {
+   text-align: center;
+   margin-top: 150px;
+ }
+
+ .error-page p {
+   font-size: 6em;
+   margin: 50px;
+ }
