@@ -5,12 +5,12 @@
 <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
     <label>Username</label>
-    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" minlength="3" [disabled]="processing" required />
+    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" minlength="3" [disabled]="processing" (focus)=resetError() required />
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
     <label>Password</label>
-    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" minlength="3" [disabled]="processing" required />
+    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" minlength="3" [disabled]="processing" (focus)=resetError() required />
   </div>
 
   <div class="submit-button-container">
@@ -29,5 +29,5 @@
 </div>
 
 <div class="error" *ngIf="usernameAlreadyExists">
-  <p>Username already exist</p>
+  <span>Username already exist</span>
 </div>

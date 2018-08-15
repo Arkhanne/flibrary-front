@@ -45,5 +45,9 @@ export class SignupPageComponent implements OnInit {
       });
     }
   }
+
+  resetError() {
+    this.usernameAlreadyExists = false;
+  }
 }
 
