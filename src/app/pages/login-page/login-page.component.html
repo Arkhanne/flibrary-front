@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
+<!-- <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
     <label>username</label>
@@ -12,4 +12,37 @@
   <div class="field submit">
     <button type="submit">Login</button>
   </div>
+</form> -->
+
+
+<h1>
+    <span class="first-letter">F</span>LIBRARY
+</h1>
+
+<form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
+    <label>Username</label>
+    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" [disabled]="processing" (focus)=resetError() required />
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+    <label>Password</label>
+    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" [disabled]="processing" (focus)=resetError() required />
+  </div>
+
+  <div class="submit-button-container">
+    <button class="submit-button" type="submit"><span class="first-letter">L</span>ogin</button>
+  </div>
 </form>
+
+<div class="error" *ngIf="feedbackEnabled && usernameField.errors">
+  <p *ngIf="usernameField.errors.required" class="validation">Username required</p>
+</div>
+
+<div class="error" *ngIf="feedbackEnabled && passwordField.errors">
+  <p *ngIf="passwordField.errors.required" class="validation">Password required</p>
+</div>
+
+<div class="error" *ngIf="userNotFound">
+  <span>User not found</span>
+</div>

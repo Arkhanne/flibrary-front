@@ -11,6 +11,10 @@ import { AuthService } from '../../services/auth.service';
 export class LoginPageComponent implements OnInit {
   username: string;
   password: string;
+  feedbackEnabled = false;
+  error = null;
+  processing = false;
+  userNotFound = false;
 
   constructor(
     private authService: AuthService,
@@ -21,16 +25,29 @@ export class LoginPageComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.login({
+    this.error = '';
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      this.processing = true;
+      this.authService.login({
         username: this.username,
         password: this.password
-    })
-    .then(() => {
-        this.router.navigate(['/films']);
-    })
-    .catch(error => {
+      })
+      .then(() => {
+          this.router.navigate(['/films']);
+      })
+      .catch(error => {
+        if (error.error.code === 'not-found') {
+          this.userNotFound = true;
+        }
+        this.processing = false;
         console.log(error);
-    });
+      });
+    } 
+  }
+  
+  resetError() {
+    this.userNotFound = false;
   }
 }
 
