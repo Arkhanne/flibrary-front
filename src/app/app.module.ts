@@ -15,7 +15,7 @@ import { FilmsPageComponent } from './pages/films-page/films-page.component';
 import { FilmDetailPageComponent } from './pages/film-detail-page/film-detail-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ReviewPageComponent } from './pages/review-page/review-page.component';
-import { E404Component } from './pages/e404/e404.component';
+import { E404PageComponent } from './pages/e404-page/e404-page.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'films/:id',  component: FilmDetailPageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'search',  component: SearchPageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'review/:id',  component: ReviewPageComponent , canActivate: [ RequireUserGuard ] },
-  { path: '**', component: E404Component }
+  { path: '**', component: E404PageComponent }
   ];
 
 @NgModule({
@@ -37,7 +37,7 @@ const routes: Routes = [
     FilmDetailPageComponent,
     SearchPageComponent,
     ReviewPageComponent,
-    E404Component,
+    E404PageComponent,
   ],
   imports: [
     BrowserModule,
