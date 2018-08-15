@@ -1,10 +1,8 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="navbar mdl-layout__header">
     <div class="mdl-layout__header-row">
       <a class="logo" [routerLink]="['/films']"><span class="first-letter">F</span>LIBRARY</a>
-      <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
       <nav [ngClass]="{'is-user': user, 'is-anon': anon}" class="mdl-navigation mdl-layout--large-screen-only">
         <a *ngIf="!loading && !!user" class="mdl-navigation__link" [routerLink]="['/films']">{{user.username}}</a>
         <a *ngIf="!loading && !!user" class="mdl-navigation__link" (click)="logout()">Logout</a>
@@ -41,4 +39,27 @@
       @2018 Copyright:   Flibrary.com
     </div>
   </footer>
+</div> -->
+
+<div class="navbar">
+    <a class="logo" [routerLink]="['/films']"><span class="first-letter">F</span>LIBRARY</a>
+    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+      <a class="navbar-link" *ngIf="!loading && !!user" [routerLink]="['/films']">{{user.username}}</a>
+      <a class="navbar-link" *ngIf="!loading && !!user" (click)="logout()">Logout</a>
+      <a class="navbar-link" *ngIf="!loading && !user" [routerLink]="['/login']">Login</a>
+      <a class="navbar-link" *ngIf="!loading && !user" [routerLink]="['/signup']">Signup</a>
+    </div>
 </div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <div class="first-footer">
+    Get connected with us on social networks!
+  </div>
+  <div class="second-footer">
+    <span>@2018 Copyright:</span><a class="footer-link" [routerLink]="['/films']">Flibrary.com</a>
+  </div>
+</footer>

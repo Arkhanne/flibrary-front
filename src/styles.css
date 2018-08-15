@@ -1,0 +1,86 @@
+
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  height: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---- typography ---- */
+
+body {
+  background-color: #333333;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 147%;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+p {
+  margin: 0;
+}
+
+
+
+/* ---- layout ---- */
+
+#site-header {
+  padding: 30px 0;
+  color: ffffff;
+  background: #333333;
+}
+
+#site-footer {
+  color: ffffff;
+  padding: 60px 0;
+  background: #333333;
+}
+
+#site-main {
+  margin-bottom: 60px;
+}
+
+.container {
+  margin: 0 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 728px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+/* ---- components ---- */
+
+.first-letter {
+  color: #ff0000;
+}
+
+
+
+

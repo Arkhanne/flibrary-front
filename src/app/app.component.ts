@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
       .then(() => this.router.navigate(['/login']));
   }
 
-  handleVisible() {
-    document.getElementById('navbar-drawer').classList.remove('is-visible');
-    document.getElementsByClassName('mdl-layout__obfuscator')[0].classList.remove('is-visible');
-  }
+  // handleVisible() {
+  //   document.getElementById('navbar-drawer').classList.remove('is-visible');
+  //   document.getElementsByClassName('mdl-layout__obfuscator')[0].classList.remove('is-visible');
+  // }
 }
