@@ -14,9 +14,7 @@ export class SignupPageComponent implements OnInit {
   feedbackEnabled = false;
   error = null;
   processing = false;
-  // submitted = false;
-  // showSubmitMessage = false;
-
+  usernameAlreadyExists = false;
 
   constructor(
     private authService: AuthService,
@@ -29,37 +27,23 @@ export class SignupPageComponent implements OnInit {
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
-    // this.submitted = false;
-    // this.showSubmitMessage = false;
     if (form.valid) {
       this.processing = true;
-      // this.showSubmitMessage = true;
       this.authService.signup({
         username: this.username,
         password: this.password
       })
       .then(() => {
-        // this.submitted = true;
         this.router.navigate(['/films']);
       })
       .catch(error => {
-          console.log(error);
+        if (error.error.code === 'username-not-unique') {
+          this.usernameAlreadyExists = true;
+        }
+        this.processing = false;
+        console.log(error);
       });
     }
-
-
-
-
-    // this.authService.signup({
-    //     username: this.username,
-    //     password: this.password
-    // })
-    // .then(() => {
-    //     this.router.navigate(['/films']);
-    // })
-    // .catch(error => {
-    //     console.log(error);
-    // });
   }
 }
 

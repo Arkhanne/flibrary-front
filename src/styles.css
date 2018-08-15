@@ -120,3 +120,8 @@ p {
    display: flex;
    flex-direction: column;
  }
+
+ .error {
+   color: #ff0000;
+   text-align: center;
+ }
