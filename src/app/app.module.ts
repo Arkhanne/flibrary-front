@@ -18,6 +18,7 @@ import { ReviewPageComponent } from './pages/review-page/review-page.component';
 import { E404PageComponent } from './pages/e404-page/e404-page.component';
 import { FilmsService} from './services/films.service';
 import { FilmsListComponent } from './components/films-list/films-list.component';
+import { FilmCardComponent } from './components/film-card/film-card.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -41,6 +42,7 @@ const routes: Routes = [
     ReviewPageComponent,
     E404PageComponent,
     FilmsListComponent,
+    FilmCardComponent,
   ],
   imports: [
     BrowserModule,
