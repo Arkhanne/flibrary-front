@@ -7,15 +7,41 @@ import { FilmsService } from '../../services/films.service';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  films: Object;
+  films = [];
+  title: string;
+  year: number;
+  error = null;
+  feedbackEnabled = false;
+  processing = false;
+  noData = false;
 
   constructor(private filmsSrv: FilmsService) { }
 
   ngOnInit() {
-    this.filmsSrv.search('haffffffdsfsdrry')
-      .then((data: Object) => {
-        this.films = data;
-      });
   }
 
+  submitForm(form) {
+    this.error = '';
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      this.processing = true;
+      this.filmsSrv.search(this.title, this.year)
+        .then((data: any) => {
+          console.log(data.Search);
+          this.films = data.Search;
+          this.processing = false;
+        })
+        .catch(error => {
+          if (error.error.code === 'no-data') {
+            this.noData = true;
+          }
+          this.processing = false;
+          console.log(error);
+        });
+    }
+  } 
+
+  resetError() {
+    this.noData = false;
+  }
 }

@@ -26,8 +26,5 @@ export class FilmsService {
 
     return this.httpClient.get(`${this.API_URL}/search/${filter}`, options)
       .toPromise()
-      .then((data) => this.films = data)
-      .catch((err) => {
-      });
   }
 }

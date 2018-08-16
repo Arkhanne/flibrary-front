@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let film of films">
+    <a [routerLink]="['/movie', film.id]">
+      <p>
+        {{film.Title}}
+      </p>
+      <img [src]="film.Poster" alt={{film.Title}}>
+    </a>
+  </li>
+</ul>

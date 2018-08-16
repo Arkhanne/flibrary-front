@@ -84,7 +84,6 @@
 ## Components
 
 - Navbar component
-- Films Search component
 - Films List component
 - Film Card component
 - Reviews List component
