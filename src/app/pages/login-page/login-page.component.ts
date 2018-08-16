@@ -43,9 +43,9 @@ export class LoginPageComponent implements OnInit {
         this.processing = false;
         console.log(error);
       });
-    } 
+    }
   }
-  
+
   resetError() {
     this.userNotFound = false;
   }

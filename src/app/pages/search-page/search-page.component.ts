@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmsService } from '../../services/films.service';
 
 @Component({
   selector: 'app-search-page',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
+  films: Object;
 
-  constructor() { }
+  constructor(private filmsSrv: FilmsService) { }
 
   ngOnInit() {
+    this.filmsSrv.search('haffffffdsfsdrry')
+      .then((data: Object) => {
+        this.films = data;
+      });
   }
 
 }
