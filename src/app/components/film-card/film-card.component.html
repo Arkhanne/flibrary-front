@@ -1,6 +1,8 @@
-<a [routerLink]="['/movie', film.id]">
-  <p>
-    {{film.Title}}
-  </p>
-  <img [src]="film.Poster" alt={{film.Title}}>
-</a>
+<div class="film-card">
+    <a [routerLink]="['/movie', film.id]">
+    <img [src]="film.Poster" alt={{film.Title}}>
+    <div class="film-title">
+      <span>{{film.Title}}</span>
+    </div>
+  </a>
+</div>

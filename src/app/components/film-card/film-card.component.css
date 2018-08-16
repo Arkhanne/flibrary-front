@@ -1,0 +1,19 @@
+.film-card {
+  width: 150px;
+  height: 200px;
+}
+
+.film-card a {
+  text-decoration: none;
+  /* color: #e6e6e6; */
+}
+
+.film-title {
+  font-size: 0.8em;
+  color: #e6e6e6;
+}
+
+.film-card img{
+  width: 150px;
+  height: 200px;
+}
