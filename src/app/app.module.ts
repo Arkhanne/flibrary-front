@@ -16,6 +16,7 @@ import { FilmDetailPageComponent } from './pages/film-detail-page/film-detail-pa
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { ReviewPageComponent } from './pages/review-page/review-page.component';
 import { E404PageComponent } from './pages/e404-page/e404-page.component';
+import { FilmsService} from './services/films.service';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -49,7 +50,8 @@ const routes: Routes = [
     AuthService,
     InitAuthGuard,
     RequireAnonGuard,
-    RequireUserGuard
+    RequireUserGuard,
+    FilmsService
   ],
   bootstrap: [AppComponent]
 })
