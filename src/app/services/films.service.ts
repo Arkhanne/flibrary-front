@@ -38,7 +38,6 @@ export class FilmsService {
         this.title = title;
         this.year = year;
         this.calcTotalPages(data.totalResults);
-        // this.totalResults = data.totalResults;
         this.films = data.Search;
         this.filmsChange.next(this.films);
       })
@@ -46,10 +45,18 @@ export class FilmsService {
         this.init();
         this.films = [];
         this.filmsChange.next(this.films);
-        if (error.error.code === 'no-data') {
-          // this.noData = true;
+
+        switch (error.error.code) {
+          case 'movie-not-found':
+            break;
+
+          case 'too-many-results':
+            break;
+
+          default:
+            break;
         }
-        // this.processing = false;
+
         console.log(error);
       });
   }
