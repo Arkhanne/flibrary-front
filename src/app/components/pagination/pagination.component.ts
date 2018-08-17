@@ -1,12 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-films-list',
-  templateUrl: './films-list.component.html',
-  styleUrls: ['./films-list.component.css']
+  selector: 'app-pagination',
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.css']
 })
-export class FilmsListComponent implements OnInit {
-  @Input() films: Object;
+export class PaginationComponent implements OnInit {
   @Input() page: Object;
   @Input() totalPages: Object;
   @Output() previousPg = new EventEmitter<boolean>();
@@ -17,11 +16,11 @@ export class FilmsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreviousPage() {
+  previousPage() {
     this.previousPg.emit();
   }
 
-  onNextPage() {
+  nextPage() {
     this.nextPg.emit();
   }
 }

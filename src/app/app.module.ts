@@ -19,6 +19,7 @@ import { E404PageComponent } from './pages/e404-page/e404-page.component';
 import { FilmsService} from './services/films.service';
 import { FilmsListComponent } from './components/films-list/films-list.component';
 import { FilmCardComponent } from './components/film-card/film-card.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -43,6 +44,7 @@ const routes: Routes = [
     E404PageComponent,
     FilmsListComponent,
     FilmCardComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

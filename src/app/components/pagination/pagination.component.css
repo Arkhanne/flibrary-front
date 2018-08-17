@@ -1,0 +1,21 @@
+.pagination-container {
+  background-color: #000000;
+  margin: 10px auto 40px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.pagination-text {
+  line-height: 5;
+}
+
+button {
+  font-family: 'Roboto';
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1.2em;
+  margin: 15px 0;
+  width: 40px;
+  height: 40px;
+}

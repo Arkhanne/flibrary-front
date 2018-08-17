@@ -4,6 +4,9 @@
   </li>
 </ul>
 
-<button (click)="previousPage()">&lt;</button>
-<p>Page {{page}} of {{totalPages}}</p>
-<button (click)="nextPage()">&gt;</button>
+<app-pagination
+  [page]="page"
+  [totalPages]="totalPages"
+  (previousPg)="onPreviousPage($event)"
+  (nextPg)="onNextPage($event)">
+</app-pagination>
