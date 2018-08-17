@@ -3,3 +3,7 @@
     <app-film-card [film]="film"></app-film-card>
   </li>
 </ul>
+
+<button (click)="previousPage()">&lt;</button>
+<p>Page {{page}} of {{totalPages}}</p>
+<button (click)="nextPage()">&gt;</button>

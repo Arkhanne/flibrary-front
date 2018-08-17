@@ -26,4 +26,10 @@
   <span>No results</span>
 </div>
 
-<app-films-list [films]="films"></app-films-list>
+<app-films-list
+  [films]="films"
+  [page]="page"
+  [totalPages]="totalPages"
+  (previousPg)="onPreviousPage($event)"
+  (nextPg)="onNextPage($event)">
+</app-films-list>

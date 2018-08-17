@@ -11,6 +11,7 @@
 .film-title {
   font-size: 0.8em;
   color: #e6e6e6;
+  line-height: 1;
 }
 
 .film-card img{
