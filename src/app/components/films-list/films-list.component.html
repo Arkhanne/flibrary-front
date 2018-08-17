@@ -4,9 +4,11 @@
   </li>
 </ul>
 
-<app-pagination
+<div *ngIf="totalPages>1">
+  <app-pagination
   [page]="page"
   [totalPages]="totalPages"
   (previousPg)="onPreviousPage($event)"
   (nextPg)="onNextPage($event)">
 </app-pagination>
+</div>

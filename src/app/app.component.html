@@ -2,6 +2,7 @@
     <a class="logo" [routerLink]="['/films']"><span class="first-letter">F</span>LIBRARY</a>
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <a class="navbar-link" *ngIf="!loading && !!user" [routerLink]="['/films']">{{user.username}}</a>
+      <a class="navbar-link" *ngIf="!loading && !!user" [routerLink]="['/search']">Search</a>
       <a class="navbar-link" *ngIf="!loading && !!user" (click)="logout()">Logout</a>
       <a class="navbar-link" *ngIf="!loading && !user" [routerLink]="['/login']">Login</a>
       <a class="navbar-link" *ngIf="!loading && !user" [routerLink]="['/signup']">Signup</a>
