@@ -9,14 +9,13 @@ import { FilmsService } from '../../services/films.service';
 export class SearchPageComponent implements OnInit {
   private films = [];
   private page = 0;
-  // private totalResults = 0;
   private totalPages = 0;
   private title: String;
   private year: Number;
   private error = null;
   private feedbackEnabled = false;
   private processing = false;
-  private noData = false;
+  // private noData = false;
 
   constructor(private filmsSrv: FilmsService) { }
 
@@ -29,12 +28,17 @@ export class SearchPageComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.filmsSrv.init();
-    this.filmsSrv.search(this.title, this.year);
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      this.processing = true;
+      this.filmsSrv.init();
+      this.filmsSrv.search(this.title, this.year);
+      this.processing = false;
+    }
   }
 
   resetError() {
-    this.noData = false;
+    // this.noData = false;
   }
 
   onPreviousPage() {
