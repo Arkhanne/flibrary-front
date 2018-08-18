@@ -20,6 +20,7 @@ import { FilmsService} from './services/films.service';
 import { FilmsListComponent } from './components/films-list/films-list.component';
 import { FilmCardComponent } from './components/film-card/film-card.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { DetailedFilmCardComponent } from './components/detailed-film-card/detailed-film-card.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -45,6 +46,7 @@ const routes: Routes = [
     FilmsListComponent,
     FilmCardComponent,
     PaginationComponent,
+    DetailedFilmCardComponent,
   ],
   imports: [
     BrowserModule,
