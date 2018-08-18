@@ -1,0 +1,39 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.detail-img {
+  width: 150px;
+  height: 200px;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+}
+
+.detail {
+  line-height: 0.8;
+  margin-bottom: 5px;
+}
+
+.detail-title {
+  color: #ffffff;
+  font-family: 'Roboto-Light';
+  margin-right: 5px;
+  font-size: 0.8em;
+}
+
+.detail-text {
+  color: #e6e6e6;
+  font-family: 'Roboto-Light';
+  font-size: 0.8em;
+}

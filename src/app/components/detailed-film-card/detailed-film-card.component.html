@@ -1,3 +1,25 @@
-<p>
-  detailed-film-card works!
-</p>
+<div class="main-container">
+  <div class="detail-image">
+    <img [src]="film.Poster" alt={{film.Title}}>
+  </div>
+  <div class="detail-container">
+    <div class="detail">
+      <span class="detail-title">Released:</span><span class="detail-text">{{film.Released}}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-title">Runtime:</span><span class="detail-text">{{film.Runtime}}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-title">Genre(s):</span><span class="detail-text">{{film.Genre}}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-title">Director:</span><span class="detail-text">{{film.Director}}</span>
+    </div>
+    <div class="detail">
+      <span class="detail-title">Starring:</span><span class="detail-text">{{film.Actors}}</span>
+    </div>
+    <div class="detail">
+        <span class="detail-title">Summary:</span><span class="detail-text">{{film.Plot}}</span>
+      </div>
+  </div>
+</div>
