@@ -1,3 +1,8 @@
-<p>
-  film-detail-page works!
-</p>
+<div class="main-container">
+  <div class="header">
+      <span class="title">{{film.Title}} ({{film.Year}})</span>
+      <button>F</button>
+  </div>
+  <app-detailed-film-card [film]="film"></app-detailed-film-card>
+  <app-rate [film]="film"></app-rate>
+</div>

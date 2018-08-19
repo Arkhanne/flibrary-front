@@ -14,6 +14,7 @@ export class FilmsService {
   private year = 0;
   page = 1;
   totalPages = 0;
+  private removedFilms = 0;
   API_URL = environment.API_FILMS_URL;
 
   filmsChange$: Observable<any> = this.filmsChange.asObservable();
@@ -37,8 +38,45 @@ export class FilmsService {
       .then((data: any) => {
         this.title = title;
         this.year = year;
-        this.calcTotalPages(data.totalResults);
         this.films = data.Search;
+        // this.removeFilmsWithoutPoster();
+        this.calcTotalPages(data.totalResults);
+        this.filmsChange.next(this.films);
+      })
+      .catch(error => {
+        this.init();
+        this.films = [];
+        this.filmsChange.next(this.films);
+
+        switch (error.error.code) {
+          case 'movie-not-found':
+            break;
+
+          case 'too-many-results':
+            break;
+
+          default:
+            break;
+        }
+
+        console.log(error);
+      });
+  }
+
+  searchById(imdbId) {
+    const options = {
+      withCredentials: true
+    };
+
+    let filter = `i=${imdbId}`;
+
+    filter += '&plot=short';
+
+    this.httpClient.get(`${this.API_URL}/search/${filter}`, options).toPromise()
+      .then((data: any) => {
+        // this.calcTotalPages(data.totalResults);
+        this.films = [];
+        this.films[0] = data;
         this.filmsChange.next(this.films);
       })
       .catch(error => {
@@ -80,9 +118,19 @@ export class FilmsService {
     this.year = 0;
     this.page = 1;
     this.totalPages = 0;
+    this.removedFilms = 0;
   }
 
   calcTotalPages(totalResults) {
-    this.totalPages = Math.ceil(totalResults / 10);
+    this.totalPages = Math.ceil((totalResults - this.removedFilms) / 10);
+  }
+
+  removeFilmsWithoutPoster() {
+    this.films.forEach((element, index, arr) => {
+      if (element.Poster === 'N/A') {
+        arr.splice(index, 1);
+        this.removedFilms++;
+      }
+    });
   }
 }

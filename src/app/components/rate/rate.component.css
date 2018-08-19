@@ -1,0 +1,108 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.metascore-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.metascore {
+  font-family: 'Roboto-Bold';
+  color: #000000;
+  background-color: #e6e6e6;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2;
+}
+
+.metascore-detail {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+  line-height: 1;
+  width: 90px;
+}
+
+.metascore-text {
+  font-size: 0.8em;
+  color: #ffffff;
+}
+
+.metascore-description {
+  font-family: 'Roboto-Light';
+  font-size: 0.8em;
+  color: #e6e6e6;
+}
+
+.user-score {
+  width: 60px;
+  height: 60px;
+}
+
+.global-rate {
+  background-color: #e6e6e6;
+  color: #000000;
+  font-family: 'Roboto-Bold';
+  font-size: 2em;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: block;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.yellow {
+  background-color: #fafa00;
+}
+
+.green {
+  background-color: #48ff00;
+}
+
+.vote-container {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  align-content: flex-end;
+  margin: 5px;
+}
+.vote-text {
+  margin: 0 10px;
+  font-size: 0.8em;
+}
+
+.vote {
+  text-align: center;
+  font-size: 0.8em;
+  /* width: 200px; */
+}
+
+.vote a {
+  text-decoration: none;
+  background-color: #e6e6e6;
+  color: #000000;
+  display: inline-block;
+  border: 1px solid #000000;
+  width: 20px;
+  height: 20px;
+  line-height: 1.5;
+}
+
+.vote a:hover {
+  background-color: #fafa00
+}
+
+
+
+

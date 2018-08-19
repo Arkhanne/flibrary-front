@@ -1,3 +1,44 @@
-<p>
-  rate works!
-</p>
+<div class="main-container">
+  <div class="metascore-container">
+    <div class="metascore" [ngClass]="{'green': film.Metascore > 60, 'yellow': film.Metascore > 39, 'red': film.Metascore > 0}">
+      <span>{{film.Metascore}}</span>
+    </div>
+    <div class="metascore-detail">
+      <span class="metascore-text">Metascore</span>
+      <span *ngIf="film.Metascore > 80" class="metascore-description">Universal Acclaim</span>
+      <span *ngIf="film.Metascore > 60 && film.Metascore < 81" class="metascore-description">Generally Favorable Reviews</span>
+      <span *ngIf="film.Metascore > 39 && film.Metascore < 61" class="metascore-description">Mixed or Average Reviews</span>
+      <span *ngIf="film.Metascore > 19 && film.Metascore < 40" class="metascore-description">Generally Unfavorable Reviews</span>
+      <span *ngIf="film.Metascore < 20" class="metascore-description">Overwhelming Dislike</span>
+    </div>
+    <div class="user-score">
+      <span class="global-rate" [ngClass]="{'green': film.Metascore > 60, 'yellow': film.Metascore > 39, 'red': film.Metascore > 0}">0</span>
+    </div>
+    <div class="metascore-detail">
+      <span class="metascore-text">User Score</span>
+      <span *ngIf="film.Metascore > 80" class="metascore-description">Universal Acclaim</span>
+      <span *ngIf="film.Metascore > 60 && film.Metascore < 81" class="metascore-description">Generally Favorable Reviews</span>
+      <span *ngIf="film.Metascore > 39 && film.Metascore < 61" class="metascore-description">Mixed or Average Reviews</span>
+      <span *ngIf="film.Metascore > 19 && film.Metascore < 40" class="metascore-description">Generally Unfavorable Reviews</span>
+      <span *ngIf="film.Metascore < 20" class="metascore-description">Overwhelming Dislike</span>
+    </div>
+    <div class="vote-container">
+      <span class="vote-text">Vote now</span>
+      <div class="vote">
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+        <a>6</a>
+        <a>7</a>
+        <a>8</a>
+        <a>9</a>
+        <a>10</a>
+      </div>
+    </div>
+  </div>
+
+
+  
+</div>
