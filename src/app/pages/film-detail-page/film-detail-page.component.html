@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="header">
       <span class="title">{{film.Title}} ({{film.Year}})</span>
-      <button>F</button>
+      <button (click)="addToFavourites()">F</button>
   </div>
   <app-detailed-film-card [film]="film"></app-detailed-film-card>
   <app-rate [film]="film"></app-rate>

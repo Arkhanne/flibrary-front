@@ -26,4 +26,7 @@ export class FilmDetailPageComponent implements OnInit {
     this.filmsSrv.searchById(this.imdbId);
   }
 
+  addToFavourites() {
+    this.filmsSrv.addToFavourites(this.imdbId);
+  }
 }
