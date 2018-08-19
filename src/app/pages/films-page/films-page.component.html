@@ -1,3 +1,7 @@
-<p>
-  films-page works!
-</p>
+<app-films-list
+  [films]="films"
+  [page]="page"
+  [totalPages]="totalPages"
+  (previousPg)="onPreviousPage($event)"
+  (nextPg)="onNextPage($event)">
+</app-films-list>

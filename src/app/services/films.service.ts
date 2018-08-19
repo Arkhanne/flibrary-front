@@ -164,4 +164,36 @@ export class FilmsService {
         console.log(error);
       });
   }
+
+  filmsByUser(user) {
+    const options = {
+      withCredentials: true
+    };
+
+    this.httpClient.get(`${this.API_URL}/filmsByUser/${user}`, options).toPromise()
+      .then((data: any) => {
+        this.films = [];
+        this.films[0] = data;
+        this.filmsChange.next(this.films);
+        console.log(this.films);
+      })
+      .catch(error => {
+        this.init();
+        this.films = [];
+        this.filmsChange.next(this.films);
+
+        switch (error.error.code) {
+          case 'movie-not-found':
+            break;
+
+          case 'too-many-results':
+            break;
+
+          default:
+            break;
+        }
+
+        console.log(error);
+      });
+  }
 }

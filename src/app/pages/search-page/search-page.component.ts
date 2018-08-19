@@ -15,7 +15,6 @@ export class SearchPageComponent implements OnInit {
   private error = null;
   private feedbackEnabled = false;
   private processing = false;
-  // private noData = false;
 
   constructor(private filmsSrv: FilmsService) { }
 
@@ -38,7 +37,6 @@ export class SearchPageComponent implements OnInit {
   }
 
   resetError() {
-    // this.noData = false;
   }
 
   onPreviousPage() {
