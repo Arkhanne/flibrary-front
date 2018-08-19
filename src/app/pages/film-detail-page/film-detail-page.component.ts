@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { FilmsService } from '../../services/films.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-film-detail-page',
@@ -12,7 +13,7 @@ export class FilmDetailPageComponent implements OnInit {
   private imdbId: number;
   private film = {};
 
-  constructor(private filmsSrv: FilmsService, private route: ActivatedRoute) {}
+  constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.filmsSrv.filmsChange$.subscribe((films) => {
@@ -27,6 +28,6 @@ export class FilmDetailPageComponent implements OnInit {
   }
 
   addToFavourites() {
-    this.filmsSrv.addToFavourites(this.imdbId);
+    this.filmsSrv.addToFavourites(this.imdbId, this.authSrv.user._id);
   }
 }

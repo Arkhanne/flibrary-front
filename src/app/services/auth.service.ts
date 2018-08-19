@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
-  private user: any;
+  user: any;
   private userChange: Subject<any> = new Subject();
 
   private API_URL = environment.API_AUTH_URL;

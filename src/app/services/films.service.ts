@@ -134,12 +134,12 @@ export class FilmsService {
     });
   }
 
-  addToFavourites(imdbId) {
+  addToFavourites(imdbId, user) {
     const options = {
       withCredentials: true
     };
 
-    this.httpClient.post(`${this.API_URL}/addToFavourites/${imdbId}`, options).toPromise()
+    this.httpClient.post(`${this.API_URL}/addToFavourites/${imdbId}&${user}`, options).toPromise()
       .then((data: any) => {
         // this.films = [];
         // this.films[0] = data;
