@@ -117,8 +117,7 @@
   Film model
 
   ```
-  title - String // required
-  year - number
+  imdbID - String // required
   score - number
   reviews - [reviewID]
   users - [userID]
