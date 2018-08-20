@@ -173,9 +173,9 @@ export class FilmsService {
     this.httpClient.get(`${this.API_URL}/filmsByUser/${user}`, options).toPromise()
       .then((data: any) => {
         this.films = [];
-        this.films[0] = data;
+        this.films = data;
+        this.sortFilms();
         this.filmsChange.next(this.films);
-        console.log(this.films);
       })
       .catch(error => {
         this.init();
@@ -195,5 +195,22 @@ export class FilmsService {
 
         console.log(error);
       });
+  }
+
+  sortFilms() {
+    this.films.sort((a, b) => {
+      const titleA = a.Title.toUpperCase();
+      const titleB = b.Title.toUpperCase();
+
+      if (titleA < titleB) {
+        return -1;
+      }
+
+      if (titleA > titleB) {
+        return 1;
+      }
+
+      return 0;
+    });
   }
 }

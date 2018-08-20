@@ -1,7 +1,9 @@
-<app-films-list
-  [films]="films"
-  [page]="page"
-  [totalPages]="totalPages"
-  (previousPg)="onPreviousPage($event)"
-  (nextPg)="onNextPage($event)">
-</app-films-list>
+<div class="main-container">
+  <app-films-list
+    [films]="films"
+    [page]="page"
+    [totalPages]="totalPages"
+    (previousPg)="onPreviousPage($event)"
+    (nextPg)="onNextPage($event)">
+  </app-films-list>
+</div>
