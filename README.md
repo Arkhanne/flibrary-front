@@ -118,7 +118,10 @@
 
   ```
   imdbID - String // required
-  score - number
+  title - String
+  poster - String
+  year - Number
+  score - Number
   reviews - [reviewID]
   users - [userID]
   ```
