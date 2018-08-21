@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_AUTH_URL: 'https://flibary-server.herokuapp.com/api/auth',
-  API_FILMS_URL: 'https://flibary-server.herokuapp.com/api/films'
+  API_AUTH_URL: 'http://localhost:3000/api/auth',
+  API_FILMS_URL: 'http://localhost:3000/api/films'
 };
 
 /*
