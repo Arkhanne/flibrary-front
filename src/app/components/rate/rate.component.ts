@@ -14,13 +14,17 @@ export class RateComponent implements OnInit {
     imdbID: String
   };
 
+  score = 'N/A';
+
   constructor(private filmsSrv: FilmsService, private authSrv: AuthService) {}
 
   ngOnInit() {
+    this.filmsSrv.scoreChange$.subscribe((score) => {
+      this.score = score;
+    });
   }
 
   vote(imdbID, score) {
-    console.log(imdbID, score);
     this.filmsSrv.vote(imdbID, this.authSrv.user._id, score);
   }
 }

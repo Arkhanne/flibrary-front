@@ -10,14 +10,17 @@ import { environment } from '../../environments/environment';
 export class FilmsService {
   private films = [];
   private filmsChange: Subject<any> = new Subject();
+  private scoreChange: Subject<any> = new Subject();
   private title = '';
   private year = 0;
   page = 1;
   totalPages = 0;
+  score = 0;
   private removedFilms = 0;
   API_URL = environment.API_FILMS_URL;
 
   filmsChange$: Observable<any> = this.filmsChange.asObservable();
+  scoreChange$: Observable<any> = this.scoreChange.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -77,7 +80,9 @@ export class FilmsService {
         // this.calcTotalPages(data.totalResults);
         this.films = [];
         this.films[0] = data;
+        this.score = data.score;
         this.filmsChange.next(this.films);
+        this.scoreChange.next(this.score);
       })
       .catch(error => {
         this.init();
@@ -224,6 +229,7 @@ export class FilmsService {
         // this.films = [];
         // this.films[0] = data;
         // this.filmsChange.next(this.films);
+        this.searchById(imdbID);
       })
       .catch(error => {
         // this.init();

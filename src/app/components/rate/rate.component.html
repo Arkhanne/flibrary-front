@@ -12,15 +12,15 @@
       <span *ngIf="film.Metascore < 20" class="metascore-description">Overwhelming Dislike</span>
     </div>
     <div class="user-score">
-      <span class="global-rate" [ngClass]="{'green': film.Metascore > 60, 'yellow': film.Metascore > 39, 'red': film.Metascore > 0}">0</span>
+      <span class="global-rate" [ngClass]="{'green': film.score > 60, 'yellow': film.score > 39, 'red': film.score > 0}">{{score}}</span>
     </div>
     <div class="metascore-detail">
-      <span class="metascore-text">User Score</span>
-      <span *ngIf="film.Metascore > 80" class="metascore-description">Universal Acclaim</span>
-      <span *ngIf="film.Metascore > 60 && film.Metascore < 81" class="metascore-description">Generally Favorable Reviews</span>
-      <span *ngIf="film.Metascore > 39 && film.Metascore < 61" class="metascore-description">Mixed or Average Reviews</span>
-      <span *ngIf="film.Metascore > 19 && film.Metascore < 40" class="metascore-description">Generally Unfavorable Reviews</span>
-      <span *ngIf="film.Metascore < 20" class="metascore-description">Overwhelming Dislike</span>
+      <span class="metascore-text">Users Score</span>
+      <span *ngIf="film.score > 80" class="metascore-description">Universal Acclaim</span>
+      <span *ngIf="film.score > 60 && film.score < 81" class="metascore-description">Generally Favorable Reviews</span>
+      <span *ngIf="film.score > 39 && film.score < 61" class="metascore-description">Mixed or Average Reviews</span>
+      <span *ngIf="film.score > 19 && film.score < 40" class="metascore-description">Generally Unfavorable Reviews</span>
+      <span *ngIf="film.score < 20" class="metascore-description">Overwhelming Dislike</span>
     </div>
     <div class="vote-container">
       <span class="vote-text">Vote now</span>
