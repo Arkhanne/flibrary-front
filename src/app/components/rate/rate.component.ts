@@ -9,7 +9,10 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./rate.component.css']
 })
 export class RateComponent implements OnInit {
-  @Input() film: Object;
+  @Input() film: {
+    Metascore: Number,
+    imdbID: String
+  };
 
   constructor(private filmsSrv: FilmsService, private authSrv: AuthService) {}
 

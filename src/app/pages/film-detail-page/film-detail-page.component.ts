@@ -10,8 +10,11 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./film-detail-page.component.css']
 })
 export class FilmDetailPageComponent implements OnInit {
-  private imdbId: number;
-  private film = {};
+  imdbId: number;
+  film = {
+    Title: String,
+    Year: Number
+  };
 
   constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute) {}
 

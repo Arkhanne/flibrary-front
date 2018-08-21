@@ -22,14 +22,10 @@
   <p *ngIf="yearField.errors.minlength || yearField.errors.maxlength" class="validation">Year must have 4 digits</p>
 </div>
 
-<div class="error" *ngIf="noResults">
-  <span>No results</span>
-</div>
-
 <app-films-list
   [films]="films"
   [page]="page"
   [totalPages]="totalPages"
-  (previousPg)="onPreviousPage($event)"
-  (nextPg)="onNextPage($event)">
+  (previousPg)="onPreviousPage()"
+  (nextPg)="onNextPage()">
 </app-films-list>

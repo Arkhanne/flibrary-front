@@ -7,14 +7,14 @@ import { FilmsService } from '../../services/films.service';
   styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent implements OnInit {
-  private films = [];
-  private page = 0;
-  private totalPages = 0;
-  private title: String;
-  private year: Number;
-  private error = null;
-  private feedbackEnabled = false;
-  private processing = false;
+  films = [];
+  page = 0;
+  totalPages = 0;
+  title: String;
+  year: Number;
+  error = null;
+  feedbackEnabled = false;
+  processing = false;
 
   constructor(private filmsSrv: FilmsService) { }
 

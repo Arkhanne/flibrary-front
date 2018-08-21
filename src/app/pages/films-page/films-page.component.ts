@@ -9,9 +9,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./films-page.component.css']
 })
 export class FilmsPageComponent implements OnInit {
-  private films = [];
-  private page = 0;
-  private totalPages = 0;
+  films = [];
+  page = 0;
+  totalPages = 0;
   // private title: String;
   // private year: Number;
   // private error = null;
