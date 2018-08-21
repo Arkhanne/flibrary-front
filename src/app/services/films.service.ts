@@ -213,4 +213,35 @@ export class FilmsService {
       return 0;
     });
   }
+
+  vote(imdbID, userID, score) {
+    const options = {
+      withCredentials: true
+    };
+
+    this.httpClient.post(`${this.API_URL}/vote/${imdbID}&${userID}&${score}`, options).toPromise()
+      .then((data: any) => {
+        // this.films = [];
+        // this.films[0] = data;
+        // this.filmsChange.next(this.films);
+      })
+      .catch(error => {
+        // this.init();
+        // this.films = [];
+        // this.filmsChange.next(this.films);
+
+        // switch (error.error.code) {
+        //   case 'movie-not-found':
+        //     break;
+
+        //   case 'too-many-results':
+        //     break;
+
+        //   default:
+        //     break;
+        // }
+
+        console.log(error);
+      });
+  }
 }

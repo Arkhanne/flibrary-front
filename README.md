@@ -122,8 +122,10 @@
   poster - String
   year - Number
   score - Number
+  acumUsersScore - Number
   reviews - [reviewID]
   users - [userID]
+  ratings - [{userID, score}]
   ```
 
   Review model
