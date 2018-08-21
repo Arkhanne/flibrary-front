@@ -18,10 +18,10 @@ const forceSSL = function () {
 
 app.use(forceSSL());
 
-app.use(express.static(path.join(__dirname, '/dist/flibrary')));
+app.use(express.static(path.join(__dirname, '/dist/front')));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(path.join(__dirname, '/dist/flibrary/index.html')));
+  res.sendFile(path.join(path.join(__dirname, '/dist/front/index.html')));
 });
 
 const port = process.env.PORT || 8080;
