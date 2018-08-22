@@ -214,27 +214,23 @@ export class FilmsService {
 
     this.httpClient.post(`${this.API_URL}/vote/${imdbID}&${userID}&${score}`, options).toPromise()
       .then((data: any) => {
-        // this.films = [];
-        // this.films[0] = data;
-        // this.filmsChange.next(this.films);
         this.searchById(imdbID);
       })
       .catch(error => {
-        // this.init();
-        // this.films = [];
-        // this.filmsChange.next(this.films);
+        console.log(error);
+      });
+  }
 
-        // switch (error.error.code) {
-        //   case 'movie-not-found':
-        //     break;
+  addReview(imdbID, userID, review) {
+    const options = {
+      withCredentials: true
+    };
 
-        //   case 'too-many-results':
-        //     break;
-
-        //   default:
-        //     break;
-        // }
-
+    this.httpClient.post(`${this.API_URL}/review/${imdbID}&${userID}&${review}`, options).toPromise()
+      .then((data: any) => {
+        window.history.back();
+      })
+      .catch(error => {
         console.log(error);
       });
   }

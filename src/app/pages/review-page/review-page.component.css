@@ -1,0 +1,19 @@
+textarea {
+  resize: none;
+  height: 100px;
+  margin: 15px 10px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+button {
+  margin: 15px 10px;
+}
+
+button:focus, button:active {
+  outline: none;
+}

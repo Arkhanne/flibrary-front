@@ -23,6 +23,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { DetailedFilmCardComponent } from './components/detailed-film-card/detailed-film-card.component';
 import { RateComponent } from './components/rate/rate.component';
 import { ReviewComponent } from './components/review/review.component';
+import { ReviewsListComponent } from './components/reviews-list/reviews-list.component';
+import { ReviewCardComponent } from './components/review-card/review-card.component';
 
 const routes: Routes = [
   { path: '',  component: FilmsPageComponent, canActivate: [ RequireUserGuard ] },
@@ -51,6 +53,8 @@ const routes: Routes = [
     DetailedFilmCardComponent,
     RateComponent,
     ReviewComponent,
+    ReviewsListComponent,
+    ReviewCardComponent,
   ],
   imports: [
     BrowserModule,

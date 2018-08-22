@@ -4,5 +4,8 @@
       <button id="fav-button" [ngClass]="{'favourite': favourite == true}" (click)="addToFavourites()">F</button>
   </div>
   <app-detailed-film-card [film]="film"></app-detailed-film-card>
+  <hr>
   <app-rate [film]="film"></app-rate>
+  <hr>
+  <app-review [film]="film"></app-review>
 </div>

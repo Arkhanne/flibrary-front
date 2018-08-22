@@ -1,3 +1,7 @@
-<p>
-  review works!
-</p>
+<div class="main-container">
+  <a class="submit-button" [routerLink]="['/review', film.imdbID]" *ngIf="favourite"><span class="first-letter">W</span>rite a<span class="first-letter">R</span>eview</a>
+  <div class="reviews-container">
+    <app-reviews-list [reviews]="film.reviews"></app-reviews-list>
+  </div>
+</div>
+

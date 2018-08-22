@@ -1,0 +1,21 @@
+.review-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-header {
+  font-family: 'Roboto-light';
+  font-size: 0.8em;
+  color: #ffffff;
+}
+
+.review-text {
+  font-family: 'Roboto-light';
+  font-size: 0.8em;
+  color: #e6e6e6;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #525252;
+}

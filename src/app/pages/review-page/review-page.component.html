@@ -1,3 +1,14 @@
-<p>
-  review-page works!
-</p>
+<form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && reviewField.errors}">
+      <!-- <textarea name="review" [(ngModel)]="review" #reviewField="ngModel" [disabled]="processing" (focus)=resetError() required></textarea> -->
+      <textarea name="review" [(ngModel)]="review" #reviewField="ngModel" [disabled]="processing" required></textarea>
+    </div>
+    <div class="buttons-container">
+        <button class="submit-button" type="button" (click)="back()"><span class="first-letter">C</span>ancel</button>
+        <button class="submit-button" type="submit"><span class="first-letter">A</span>ccept</button>
+    </div>
+  </form>
+  
+  <div class="error" *ngIf="feedbackEnabled && reviewField.errors">
+    <p *ngIf="reviewField.errors.required" class="validation">Review text required</p>
+  </div>

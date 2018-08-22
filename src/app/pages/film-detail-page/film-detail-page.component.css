@@ -24,7 +24,16 @@ button {
   height: 30px;
 }
 
+button:focus, button:active {
+  outline: none;
+}
+
 .favourite {
   background-color: #ff0000;
   color: #ffffff;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #525252;
 }

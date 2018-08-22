@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { FilmsService } from '../../services/films.service';
 import { AuthService } from '../../services/auth.service';
@@ -15,11 +14,13 @@ export class FilmDetailPageComponent implements OnInit {
   favourite: Boolean;
 
   film = {
+    imdbID: this.imdbId,
     Title: String,
-    Year: Number
+    Year: Number,
+    Reviews: Array
   };
 
-  constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute, private location: Location) {}
+  constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.filmsSrv.filmsChange$.subscribe((films) => {
