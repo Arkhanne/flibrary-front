@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { FilmsService } from '../../services/films.service';
 import { AuthService } from '../../services/auth.service';
@@ -18,7 +19,7 @@ export class FilmDetailPageComponent implements OnInit {
     Year: Number
   };
 
-  constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute) {}
+  constructor(private filmsSrv: FilmsService, private authSrv: AuthService, private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
     this.filmsSrv.filmsChange$.subscribe((films) => {
@@ -38,5 +39,10 @@ export class FilmDetailPageComponent implements OnInit {
 
   addToFavourites() {
     this.filmsSrv.addToFavourites(this.imdbId, this.authSrv.user._id);
+  }
+
+  cancel() {
+    console.log('back');
+    this.location.back(); // <-- go back to previous location on cancel
   }
 }

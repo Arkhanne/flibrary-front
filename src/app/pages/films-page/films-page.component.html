@@ -1,4 +1,7 @@
 <div class="main-container">
+    <div class="add-container" *ngIf="films.length == 0">
+        <a class="add" [routerLink]="['/search']">+</a>
+    </div>
   <app-films-list
     [films]="films"
     [page]="page"
