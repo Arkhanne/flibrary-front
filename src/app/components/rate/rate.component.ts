@@ -11,7 +11,8 @@ import { AuthService } from '../../services/auth.service';
 export class RateComponent implements OnInit {
   @Input() film: {
     Metascore: Number,
-    imdbID: String
+    imdbID: String,
+    score: Number
   };
 
   score = 'N/A';
