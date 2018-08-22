@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="header">
       <span class="title">{{film.Title}} ({{film.Year}})</span>
-      <button (click)="addToFavourites()">F</button>
+      <button id="fav-button" [ngClass]="{'favourite': favourite == true}" (click)="addToFavourites()">F</button>
   </div>
   <app-detailed-film-card [film]="film"></app-detailed-film-card>
   <app-rate [film]="film"></app-rate>

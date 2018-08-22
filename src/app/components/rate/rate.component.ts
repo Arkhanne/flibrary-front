@@ -15,12 +15,17 @@ export class RateComponent implements OnInit {
   };
 
   score = 'N/A';
+  favourite = false;
 
   constructor(private filmsSrv: FilmsService, private authSrv: AuthService) {}
 
   ngOnInit() {
     this.filmsSrv.scoreChange$.subscribe((score) => {
       this.score = score;
+    });
+
+    this.filmsSrv.favouriteChange$.subscribe((favourite) => {
+      this.favourite = favourite;
     });
   }
 

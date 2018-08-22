@@ -11,16 +11,19 @@ export class FilmsService {
   private films = [];
   private filmsChange: Subject<any> = new Subject();
   private scoreChange: Subject<any> = new Subject();
+  private favouriteChange: Subject<any> = new Subject();
   private title = '';
   private year = 0;
   page = 1;
   totalPages = 0;
   score = 0;
+  favourite = false;
   private removedFilms = 0;
   API_URL = environment.API_FILMS_URL;
 
   filmsChange$: Observable<any> = this.filmsChange.asObservable();
   scoreChange$: Observable<any> = this.scoreChange.asObservable();
+  favouriteChange$: Observable<any> = this.favouriteChange.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -83,6 +86,7 @@ export class FilmsService {
         this.score = data.score;
         this.filmsChange.next(this.films);
         this.scoreChange.next(this.score);
+        this.favouriteChange.next(data.favourite);
       })
       .catch(error => {
         this.init();
@@ -146,26 +150,10 @@ export class FilmsService {
 
     this.httpClient.post(`${this.API_URL}/addToFavourites/${imdbId}&${user}`, options).toPromise()
       .then((data: any) => {
-        // this.films = [];
-        // this.films[0] = data;
-        // this.filmsChange.next(this.films);
+        this.favourite = true;
+        this.favouriteChange.next(this.favourite);
       })
       .catch(error => {
-        // this.init();
-        // this.films = [];
-        // this.filmsChange.next(this.films);
-
-        // switch (error.error.code) {
-        //   case 'movie-not-found':
-        //     break;
-
-        //   case 'too-many-results':
-        //     break;
-
-        //   default:
-        //     break;
-        // }
-
         console.log(error);
       });
   }

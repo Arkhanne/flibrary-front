@@ -11,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class FilmDetailPageComponent implements OnInit {
   imdbId: number;
+  favourite: Boolean;
+
   film = {
     Title: String,
     Year: Number
@@ -25,6 +27,10 @@ export class FilmDetailPageComponent implements OnInit {
 
     this.route.params.subscribe((params) => {
       this.imdbId = params.id;
+    });
+
+    this.filmsSrv.favouriteChange$.subscribe((favourite) => {
+      this.favourite = favourite;
     });
 
     this.filmsSrv.searchById(this.imdbId);

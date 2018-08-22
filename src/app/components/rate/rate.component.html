@@ -23,18 +23,18 @@
       <span *ngIf="film.score < 20" class="metascore-description">Overwhelming Dislike</span>
     </div>
     <div class="vote-container">
-      <span class="vote-text">Vote now</span>
-      <div class="vote">
-        <a (click)="vote(film.imdbID, 1)">1</a>
-        <a (click)="vote(film.imdbID, 2)">2</a>
-        <a (click)="vote(film.imdbID, 3)">3</a>
-        <a (click)="vote(film.imdbID, 4)">4</a>
-        <a (click)="vote(film.imdbID, 5)">5</a>
-        <a (click)="vote(film.imdbID, 6)">6</a>
-        <a (click)="vote(film.imdbID, 7)">7</a>
-        <a (click)="vote(film.imdbID, 8)">8</a>
-        <a (click)="vote(film.imdbID, 9)">9</a>
-        <a (click)="vote(film.imdbID, 10)">10</a>
+      <span id="vote-text" class="vote-text" [hidden]="favourite == false">Vote now</span>
+      <div id="votes" class="vote" [hidden]="favourite == false">
+        <a id="vote1" [ngClass]="{'yellow': film.userScore == 1}" (click)="vote(film.imdbID, 1)">1</a>
+        <a id="vote2" [ngClass]="{'yellow': film.userScore == 2}" (click)="vote(film.imdbID, 2)">2</a>
+        <a id="vote3" [ngClass]="{'yellow': film.userScore == 3}" (click)="vote(film.imdbID, 3)">3</a>
+        <a id="vote4" [ngClass]="{'yellow': film.userScore == 4}" (click)="vote(film.imdbID, 4)">4</a>
+        <a id="vote5" [ngClass]="{'yellow': film.userScore == 5}" (click)="vote(film.imdbID, 5)">5</a>
+        <a id="vote6" [ngClass]="{'yellow': film.userScore == 6}" (click)="vote(film.imdbID, 6)">6</a>
+        <a id="vote7" [ngClass]="{'yellow': film.userScore == 7}" (click)="vote(film.imdbID, 7)">7</a>
+        <a id="vote8" [ngClass]="{'yellow': film.userScore == 8}" (click)="vote(film.imdbID, 8)">8</a>
+        <a id="vote9" [ngClass]="{'yellow': film.userScore == 9}" (click)="vote(film.imdbID, 9)">9</a>
+        <a id="vote10" [ngClass]="{'yellow': film.userScore == 10}" (click)="vote(film.imdbID, 10)">10</a>
       </div>
     </div>
   </div>

@@ -58,18 +58,6 @@
   text-align: center;
 }
 
-.red {
-  background-color: #ff0000;
-}
-
-.yellow {
-  background-color: #fafa00;
-}
-
-.green {
-  background-color: #48ff00;
-}
-
 .vote-container {
   display: flex;
   flex-direction: row;
@@ -103,6 +91,14 @@
   background-color: #fafa00
 }
 
+.red {
+  background-color: #ff0000;
+}
 
+.yellow, .vote a.yellow {
+  background-color: #fafa00;
+}
 
-
+.green {
+  background-color: #48ff00;
+}
