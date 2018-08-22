@@ -12,7 +12,8 @@ export class RateComponent implements OnInit {
   @Input() film: {
     Metascore: Number,
     imdbID: String,
-    score: Number
+    score: Number,
+    userScore: Number
   };
 
   score = 'N/A';
