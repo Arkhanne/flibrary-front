@@ -40,9 +40,4 @@ export class FilmDetailPageComponent implements OnInit {
   addToFavourites() {
     this.filmsSrv.addToFavourites(this.imdbId, this.authSrv.user._id);
   }
-
-  cancel() {
-    console.log('back');
-    this.location.back(); // <-- go back to previous location on cancel
-  }
 }
