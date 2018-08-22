@@ -123,19 +123,11 @@
   year - Number
   score - Number
   acumUsersScore - Number
-  reviews - [reviewID]
+  reviews - [{userID, date: Date, review}]
   users - [userID]
   ratings - [{userID, score}]
   ```
 
-  Review model
-
-  ```
-  film - fimID
-  user - userID
-  date - Date
-  text - String
-  ```
 
 ## API Endpoints/Backend Routes
 
