@@ -23,8 +23,8 @@
       <span *ngIf="film.score < 20" class="metascore-description">Overwhelming Dislike</span>
     </div>
     <div class="vote-container">
-      <span id="vote-text" class="vote-text" [hidden]="favourite == false">Vote now</span>
-      <div id="votes" class="vote" [hidden]="favourite == false">
+      <span id="vote-text" class="vote-text" *ngIf="favourite">Vote now</span>
+      <div id="votes" class="vote" *ngIf="favourite">
         <a id="vote1" [ngClass]="{'yellow': film.userScore == 1}" (click)="vote(film.imdbID, 1)">1</a>
         <a id="vote2" [ngClass]="{'yellow': film.userScore == 2}" (click)="vote(film.imdbID, 2)">2</a>
         <a id="vote3" [ngClass]="{'yellow': film.userScore == 3}" (click)="vote(film.imdbID, 3)">3</a>
