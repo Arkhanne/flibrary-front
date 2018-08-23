@@ -37,6 +37,9 @@ footer {
 }
 
 .first-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #000000;
   color: #e6e6e6;
   font-size: 0.6em;
@@ -60,4 +63,9 @@ footer {
   color: #ffffff;
   text-decoration: none;
   margin-left: 5px;
+}
+
+.footer-img {
+  width: 20px;
+  height: 20px;
 }
