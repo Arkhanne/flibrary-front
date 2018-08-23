@@ -1,6 +1,5 @@
 <form class="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
     <div class="field" [ngClass]="{'has-error': feedbackEnabled && reviewField.errors}">
-      <!-- <textarea name="review" [(ngModel)]="review" #reviewField="ngModel" [disabled]="processing" (focus)=resetError() required></textarea> -->
       <textarea name="review" [(ngModel)]="review" #reviewField="ngModel" [disabled]="processing" required></textarea>
     </div>
     <div class="buttons-container">
