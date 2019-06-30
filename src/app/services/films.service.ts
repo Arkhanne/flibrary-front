@@ -80,7 +80,6 @@ export class FilmsService {
 
     this.httpClient.get(`${this.API_URL}/search/${filter}`, options).toPromise()
       .then((data: any) => {
-        // this.calcTotalPages(data.totalResults);
         this.films = [];
         this.films[0] = data;
         this.score = data.score;
